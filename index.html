@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recoil Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            margin-right: 5px;
+        }
+
+        #visualization {
+            margin-top: 20px;
+        }
+
+        .point {
+            cursor: pointer;
+            fill: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recoil Visualization</h1>
+    <label for="x-coordinate">X Coordinate:</label>
+    <input type="number" id="x-coordinate" required>
+    <br>
+    <label for="y-coordinate">Y Coordinate:</label>
+    <input type="number" id="y-coordinate" required>
+    <br>
+    <button onclick="addPoint()">Add Point</button>
+    <button onclick="visualizeRecoil()">Visualize Recoil</button>
+    <div id="visualization"></div>
+
+    <script src="your_script.js"></script>
+</body>
+</html>
