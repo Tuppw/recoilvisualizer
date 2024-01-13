@@ -18,13 +18,22 @@
             margin-right: 5px;
         }
 
+        #visualization-container {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            position: relative;
+        }
+
         #visualization {
-            margin-top: 20px;
+            position: absolute;
         }
 
         .point {
             cursor: pointer;
             fill: red;
+            position: absolute;
         }
     </style>
 </head>
@@ -38,7 +47,9 @@
     <br>
     <button onclick="addPoint()">Add Point</button>
     <button onclick="visualizeRecoil()">Visualize Recoil</button>
-    <div id="visualization"></div>
+    <div id="visualization-container">
+        <div id="visualization"></div>
+    </div>
 
     <script src="your_script.js"></script>
 </body>
