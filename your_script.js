@@ -1,14 +1,13 @@
 let points = [];
 
-function addPoint() {
-    const newX = parseFloat(prompt('Enter X Coordinate:'));
-    const newY = parseFloat(prompt('Enter Y Coordinate:'));
+document.getElementById('visualization-container').addEventListener('click', function(event) {
+    const rect = event.target.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
 
-    if (!isNaN(newX) && !isNaN(newY)) {
-        points.push({ x: newX, y: newY });
-        visualizeRecoil();
-    }
-}
+    points.push({ x, y });
+    visualizeRecoil();
+});
 
 function visualizeRecoil() {
     const visualizationDiv = document.getElementById('visualization');
