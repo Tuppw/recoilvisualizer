@@ -35,3 +35,12 @@ function editPoint(index) {
         visualizeRecoil();
     }
 }
+
+function pointsToDictionary() {
+    const dictionary = {};
+    points.forEach((point, index) => {
+        dictionary[`point${index + 1}`] = { x: point.x, y: point.y };
+    });
+
+    alert(JSON.stringify(dictionary, null, 2));
+}
