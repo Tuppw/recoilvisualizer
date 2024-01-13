@@ -1,13 +1,12 @@
 let points = [];
 
 function addPoint() {
-    const x = parseFloat(document.getElementById('x-coordinate').value);
-    const y = parseFloat(document.getElementById('y-coordinate').value);
+    const newX = parseFloat(prompt('Enter X Coordinate:'));
+    const newY = parseFloat(prompt('Enter Y Coordinate:'));
 
-    if (!isNaN(x) && !isNaN(y)) {
-        points.push({ x, y });
+    if (!isNaN(newX) && !isNaN(newY)) {
+        points.push({ x: newX, y: newY });
         visualizeRecoil();
-        clearInputFields();
     }
 }
 
@@ -19,7 +18,6 @@ function visualizeRecoil() {
         const pointDiv = document.createElement('div');
         pointDiv.className = 'point';
         pointDiv.textContent = `${index + 1}`;
-        pointDiv.style.position = 'absolute';
         pointDiv.style.left = `${point.x}px`;
         pointDiv.style.top = `${point.y}px`;
 
@@ -30,16 +28,11 @@ function visualizeRecoil() {
 }
 
 function editPoint(index) {
-    const newX = parseFloat(prompt('Enter new X coordinate:'));
-    const newY = parseFloat(prompt('Enter new Y coordinate:'));
+    const newX = parseFloat(prompt('Enter new X Coordinate:'));
+    const newY = parseFloat(prompt('Enter new Y Coordinate:'));
 
     if (!isNaN(newX) && !isNaN(newY)) {
         points[index] = { x: newX, y: newY };
         visualizeRecoil();
     }
-}
-
-function clearInputFields() {
-    document.getElementById('x-coordinate').value = "";
-    document.getElementById('y-coordinate').value = "";
 }
